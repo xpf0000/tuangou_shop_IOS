@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TixianCell" rowHeight="89" id="KGk-i7-Jjw" customClass="TixianCell" customModule="taihangOA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="497" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="497" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-06-16 17:59:34" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gu0-Yh-pDO">
+                        <rect key="frame" x="12" y="28.5" width="72" height="31.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money_add.png" translatesAutoresizingMaskIntoConstraints="NO" id="pXd-kN-WtB">
+                        <rect key="frame" x="96" y="19.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="I8w-92-TPg"/>
+                            <constraint firstAttribute="width" constant="50" id="fA0-ti-CXN"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="500.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCW-FV-fFP">
+                        <rect key="frame" x="156" y="19.5" width="329" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTl-zU-Doh">
+                        <rect key="frame" x="156" y="39.5" width="46" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title="待审核">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" title="已拒绝">
+                            <color key="titleColor" red="1" green="0.28627450980392155" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="show_reason:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xc1-g4-UGW"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Gu0-Yh-pDO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="BUF-Dk-hXu"/>
+                    <constraint firstItem="pXd-kN-WtB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MhE-1o-quj"/>
+                    <constraint firstItem="UCW-FV-fFP" firstAttribute="leading" secondItem="pXd-kN-WtB" secondAttribute="trailing" constant="10" id="SK1-WS-uUK"/>
+                    <constraint firstItem="pXd-kN-WtB" firstAttribute="leading" secondItem="Gu0-Yh-pDO" secondAttribute="trailing" constant="12" id="Udb-Lj-gLE"/>
+                    <constraint firstItem="lTl-zU-Doh" firstAttribute="bottom" secondItem="pXd-kN-WtB" secondAttribute="bottom" id="WhZ-o5-WXg"/>
+                    <constraint firstItem="Gu0-Yh-pDO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XVV-Lb-NNt"/>
+                    <constraint firstItem="lTl-zU-Doh" firstAttribute="leading" secondItem="UCW-FV-fFP" secondAttribute="leading" id="Xhs-ob-mG0"/>
+                    <constraint firstItem="UCW-FV-fFP" firstAttribute="top" secondItem="pXd-kN-WtB" secondAttribute="top" id="ooS-Ah-XI1"/>
+                    <constraint firstAttribute="trailing" secondItem="UCW-FV-fFP" secondAttribute="trailing" constant="12" id="x7g-ub-i5C"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="money" destination="UCW-FV-fFP" id="8Ix-WS-kh0"/>
+                <outlet property="status" destination="lTl-zU-Doh" id="lAN-qv-ZV0"/>
+                <outlet property="time" destination="Gu0-Yh-pDO" id="rER-rc-zpG"/>
+            </connections>
+            <point key="canvasLocation" x="-74.5" y="20.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="money_add.png" width="75" height="75"/>
+    </resources>
+</document>

@@ -9,6 +9,8 @@
 import UIKit
 
 class CommentCell: UITableViewCell,UICollectionViewDelegate {
+    
+    @IBOutlet weak var uname: UILabel!
 
     @IBOutlet weak var star: XStarView!
     
@@ -26,33 +28,79 @@ class CommentCell: UITableViewCell,UICollectionViewDelegate {
     
     @IBOutlet weak var picH: NSLayoutConstraint!
     
+    @IBOutlet weak var user_icon: UIImageView!
+    
+    @IBOutlet weak var reply: UILabel!
+    
+    @IBOutlet weak var replybtn: UIButton!
+    
+    @IBOutlet weak var replyTop: NSLayoutConstraint!
+    
+    @IBAction func do_reply(_ sender: Any) {
+        
+        let vc = "CommentReplyVC".VC(name: "Main") as! CommentReplyVC
+        vc.model = model
+        
+        vc.onSuccess {[weak self] in
+            
+            if let sv = self?.viewController as? CommentListVC
+            {
+                if let indexPath = sv.table.indexPath(for: self!)
+                {
+                    sv.table.cellHDict.removeValue(forKey: indexPath)
+                }
+                
+                sv.table.reloadData()
+            }
+            
+        }
+        
+        self.viewController?.show(vc, sender: nil)
+        
+    }
+    
+    
     var imgs:[Int:UIImageView] = [:]
     
-//    var model:ItemBean = ItemBean()
-//    {
-//        didSet
-//        {
-//            star.num = model.point.numberValue.intValue
-//            time.text = model.create_time
-//            content.text = model.content
-//            icon.kf.setImage(with: model.icon.url())
-//            name.text = model.sub_name
-//            sub_name.text = model.sub_name
-//            
-//            if model.oimages.count == 0{
-//                picH.constant = 0.0
-//                pics.httpHandle.listArr.removeAll(keepingCapacity: false)
-//            }
-//            else
-//            {
-//                picH.constant = 90.0
-//                pics.httpHandle.listArr = model.oimages as [AnyObject]
-//            }
-//            
-//            pics.reloadData()
-//            
-//        }
-//    }
+    var model:CommentModel = CommentModel()
+    {
+        didSet
+        {
+            uname.text = model.user_name
+            star.num = model.point.numberValue.intValue
+            time.text = model.create_time
+            content.text = model.content
+            user_icon.kf.setImage(with: model.avatar.url())
+            icon.kf.setImage(with: model.icon.url())
+            name.text = model.sub_name
+            sub_name.text = model.sub_name
+            
+            if model.reply_time == ""
+            {
+                replyTop.constant = 0
+                reply.text = ""
+            }
+            else
+            {
+                replyTop.constant = 10
+                reply.text = "[掌柜回复]：\(model.reply_content)"
+            }
+            
+            
+            if model.images.count == 0{
+                picH.constant = 0.0
+                pics.httpHandle.listArr.removeAll(keepingCapacity: false)
+            }
+            else
+            {
+                picH.constant = 90.0
+                pics.httpHandle.listArr = model.images as [AnyObject]
+            }
+            
+            pics.reloadData()
+            
+        }
+    }
     
     
     override func awakeFromNib() {
@@ -76,6 +124,16 @@ class CommentCell: UITableViewCell,UICollectionViewDelegate {
             
         }
         
+        user_icon.layer.masksToBounds = true
+        replybtn.layer.masksToBounds = true
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+    
+        user_icon.layer.cornerRadius = user_icon.frame.size.width * 0.5
+        replybtn.layer.cornerRadius = replybtn.frame.size.height * 0.5
+        reply.preferredMaxLayoutWidth = reply.frame.size.width
         
     }
     

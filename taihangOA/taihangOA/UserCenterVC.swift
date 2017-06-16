@@ -17,35 +17,35 @@ class UserCenterVC: UITableViewController {
 
     func showInfo()
     {
-        if(DataCache.Share.User.id != "")
-        {
-            let url = DataCache.Share.User.avatar.url()
-            
-            header.kf.setImage(with: url, placeholder: "tx.jpg".image(), options: nil, progressBlock: nil, completionHandler: nil)
-            
-            if(DataCache.Share.User.is_effect == 1)
-            {
-                name.text = DataCache.Share.User.real_name
-            }
-            else
-            {
-                
-                if(DataCache.Share.User.rezhenging)
-                {
-                    name.text = "会员审核中"
-                }
-                else
-                {
-                    name.text = "请提交认证"
-                }
-                
-            }
-        }
-        else
-        {
-            header.image = "tx.jpg".image()
-            name.text = "尚未登录"
-        }
+//        if(DataCache.Share.User.id != "")
+//        {
+//            let url = DataCache.Share.User.avatar.url()
+//            
+//            header.kf.setImage(with: url, placeholder: "tx.jpg".image(), options: nil, progressBlock: nil, completionHandler: nil)
+//            
+//            if(DataCache.Share.User.is_effect == 1)
+//            {
+//                name.text = DataCache.Share.User.real_name
+//            }
+//            else
+//            {
+//                
+//                if(DataCache.Share.User.rezhenging)
+//                {
+//                    name.text = "会员审核中"
+//                }
+//                else
+//                {
+//                    name.text = "请提交认证"
+//                }
+//                
+//            }
+//        }
+//        else
+//        {
+//            header.image = "tx.jpg".image()
+//            name.text = "尚未登录"
+//        }
         
         
     }
@@ -143,16 +143,16 @@ class UserCenterVC: UITableViewController {
             
         case 8:
             
-            let vc = HtmlVC()
-            vc.hidesBottomBarWhenPushed = true
-            if let u = "http://tg01.sssvip.net/wap/index.php?ctl=user_center&act=app_qrcode&code=\(DataCache.Share.User.user_name)".url()
-            {
-                vc.url = u
-            }
-            
-            vc.title = "我的邀请码"
-            
-            self.show(vc, sender: nil)
+//            let vc = HtmlVC()
+//            vc.hidesBottomBarWhenPushed = true
+//            if let u = "http://tg01.sssvip.net/wap/index.php?ctl=user_center&act=app_qrcode&code=\(DataCache.Share.User.user_name)".url()
+//            {
+//                vc.url = u
+//            }
+//            
+//            vc.title = "我的邀请码"
+//            
+//            self.show(vc, sender: nil)
             
             break
             

@@ -13,94 +13,86 @@ import Kingfisher
 
 class HomeVC: UIViewController {
     
-    @IBOutlet weak var collect: UICollectionView!
     
-    let topBar = HomeTopBar()
+    @IBAction func to_scan(_ sender: Any) {
+        
+        
+    }
+    
+    
+    @IBAction func to_input(_ sender: Any) {
+    }
+    
+    @IBAction func to_history(_ sender: Any) {
+    }
+    
+    
+    @IBAction func to_order(_ sender: Any) {
+        
+        let vc = OrderListVC()
+        self.show(vc, sender: nil)
+        
+    }
+    
+    
+    @IBAction func to_dp(_ sender: Any) {
+        
+        let vc = CommentListVC()
+        self.show(vc, sender: nil)
+        
+    }
+    
+    @IBAction func to_caiwu(_ sender: Any) {
+    }
+    
+    @IBAction func to_account(_ sender: Any) {
+        
+        let vc = "BankInfoVC".VC(name: "Main")
+        self.show(vc, sender: nil)
+    }
+    
+    @IBAction func to_tx(_ sender: Any) {
+        
+        let vc = "TixianVC".VC(name: "Main")
+        self.show(vc, sender: nil)
+        
+        
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if(DataCache.Share.city.id == "")
-//        {
-//            let vc = "CityListVC".VC(name: "Main") as! CityListVC
-//            vc.first = true
-//            
-//            vc.onChoose {[weak self] in
-//                self?.topBar.setCityName()
-//                self?.getData()
-//            }
-//            
-//            let nv = XNavigationController.init(rootViewController: vc)
-//
-//            self.show(nv, sender: nil)
-//        }
-        
-        self.view.backgroundColor = UIColor.white
-        
-        
-        topBar.frame = CGRect(x: 0, y: 0, width: SW, height: 44.0)
-        
-        initTabBar()
-        
-        collect.register("HomeClassCell".Nib(), forCellWithReuseIdentifier: "HomeClassCell")
-        collect.register("HomeTopicCell".Nib(), forCellWithReuseIdentifier: "HomeTopicCell")
-        collect.register("HomeDealCell".Nib(), forCellWithReuseIdentifier: "HomeDealCell")
-        
-        
-        collect.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "CollectFooter")
-        
-        collect.register("HomeCHeader".Nib(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HomeCHeader")
 
-        collect.contentInset.top = 20
-        collect.contentInset.bottom = 50
+        NotificationCenter.default.addObserver(self, selector: #selector(onTimeOut), name: NSNotification.Name(rawValue: "UserTimeOut"), object: nil)
         
-        collect.setHeaderRefresh {[weak self] in
+        self.title = DataCache.Share.User.name
+        
+        let button=UIButton(type: UIButtonType.custom)
+        button.frame=CGRect(x: 0, y: 0, width: 24, height: 24);
+        button.setBackgroundImage("setup.png".image(), for: UIControlState())
+        button.isExclusiveTouch = true
+        let rightItem=UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem=rightItem;
+        
+        button.click {[weak self] (btn) in
             
-            self?.getData()
+            let vc = "APPSetupVC".VC(name: "Main")
             
+            self?.show(vc, sender: nil)
+        
         }
         
-//        if(DataCache.Share.city.id != "")
-//        {
-//            getData()
-//        }
         
-        topBar.home = self
-         
     }
     
-    func initTabBar()
+    func onTimeOut()
     {
-        let arr:Array<UITabBarItem> = (self.tabBarController?.tabBar.items)!
-        let scale = Int(UIScreen.main.scale)
-
-        for (i,item) in arr.enumerated()
-        {
-            item.image="tab_\(i)@\(scale)x.png".image()!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-            item.selectedImage="tab_\(i)_1@\(scale)x.png".image()!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
-            
-            item.setTitleTextAttributes([NSForegroundColorAttributeName:APPBlueColor,NSFontAttributeName:UIFont.systemFont(ofSize: 13.0)], for: UIControlState.selected)
-            
-            item.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 13.0)], for: UIControlState.normal)
-            
+        XAlertView.show("用户登录已过期，请重新登录") { [weak self] in
+            self?.pop()
         }
     }
     
-    func getData()
-    {
-//        let cid = DataCache.Share.city.id
-//        
-//        Api.app_index(city_id: cid, xpoint: "", ypoint: "") { [weak self](model) in
-//            
-//            self?.collect.endHeaderRefresh()
-//            
-//            self?.homeModel = model
-//            self?.collect.reloadData()
-//            
-//        }
-    }
-    
-        
     func dodeinit()
     {
         
@@ -109,38 +101,10 @@ class HomeVC: UIViewController {
     
     deinit
     {
-        dodeinit()
+        NotificationCenter.default.removeObserver(self)
         print("HomeVC deinit !!!!!!!!!!!!!!!!")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        TabIndex = 0
-        self.navigationController?.navigationBar.addSubview(topBar)
-       
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-       
-        topBar.removeFromSuperview()
-        
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
     
     
 }

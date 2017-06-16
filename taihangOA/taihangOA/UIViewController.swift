@@ -44,14 +44,6 @@ extension UIViewController{
         }
         else
         {
-            if(DataCache.Share.User.is_effect != 1)
-            {
-                let vc = "RenzhengVC".VC(name: "Main")
-                let nv:XNavigationController = XNavigationController(rootViewController: vc)
-                self.show(nv, sender: nil)
-                
-                return false
-            }
         }
         
         return true

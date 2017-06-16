@@ -23,6 +23,16 @@
 		170BCA701EEFEBC60084693D /* MRZoomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BCA6F1EEFEBC60084693D /* MRZoomScrollView.swift */; };
 		170BCA741EF0009C0084693D /* CommentSubmitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BCA731EF0009C0084693D /* CommentSubmitVC.swift */; };
 		170BCA781EF004000084693D /* XTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BCA771EF004000084693D /* XTextView.swift */; };
+		173631361EF3BCCC0010AFF0 /* OrderListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173631351EF3BCCC0010AFF0 /* OrderListVC.swift */; };
+		173631381EF3C5490010AFF0 /* CommentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173631371EF3C5490010AFF0 /* CommentListVC.swift */; };
+		1736313B1EF3C94B0010AFF0 /* list_star01.png in Resources */ = {isa = PBXBuildFile; fileRef = 173631391EF3C94B0010AFF0 /* list_star01.png */; };
+		1736313C1EF3C94B0010AFF0 /* list_star02.png in Resources */ = {isa = PBXBuildFile; fileRef = 1736313A1EF3C94B0010AFF0 /* list_star02.png */; };
+		1736313E1EF3CA730010AFF0 /* CommentReplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1736313D1EF3CA730010AFF0 /* CommentReplyVC.swift */; };
+		173631401EF3D3D30010AFF0 /* BankInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1736313F1EF3D3D30010AFF0 /* BankInfoVC.swift */; };
+		173631421EF3DD9A0010AFF0 /* TixianVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173631411EF3DD9A0010AFF0 /* TixianVC.swift */; };
+		173631461EF3E41D0010AFF0 /* TixianCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173631441EF3E41D0010AFF0 /* TixianCell.swift */; };
+		173631471EF3E41D0010AFF0 /* TixianCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173631451EF3E41D0010AFF0 /* TixianCell.xib */; };
+		173631491EF3E7650010AFF0 /* TixianHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173631481EF3E7650010AFF0 /* TixianHistoryVC.swift */; };
 		174213281EF22CFA002F37F5 /* XRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174213271EF22CFA002F37F5 /* XRoundView.swift */; };
 		1742132A1EF23679002F37F5 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174213291EF23679002F37F5 /* TestVC.swift */; };
 		1742132E1EF26B4E002F37F5 /* StoresListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1742132D1EF26B4E002F37F5 /* StoresListVC.swift */; };
@@ -104,6 +114,7 @@
 		178555131EF3775400C6665F /* ShopsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178555121EF3775400C6665F /* ShopsModel.swift */; };
 		178555151EF377FF00C6665F /* CouponCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178555141EF377FF00C6665F /* CouponCheckModel.swift */; };
 		178555171EF379A300C6665F /* CheckHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178555161EF379A300C6665F /* CheckHistoryModel.swift */; };
+		178555191EF3875600C6665F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178555181EF3875600C6665F /* LoginVC.swift */; };
 		178C6BD61EEED0B3006E8A56 /* ScannerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C6BD41EEED0B3006E8A56 /* ScannerBackgroundView.swift */; };
 		178C6BD71EEED0B3006E8A56 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C6BD51EEED0B3006E8A56 /* ScannerViewController.swift */; };
 		178C6BDB1EEEDE9B006E8A56 /* APPSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C6BDA1EEEDE9B006E8A56 /* APPSetupVC.swift */; };
@@ -228,6 +239,16 @@
 		170BCA6F1EEFEBC60084693D /* MRZoomScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRZoomScrollView.swift; sourceTree = "<group>"; };
 		170BCA731EF0009C0084693D /* CommentSubmitVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentSubmitVC.swift; sourceTree = "<group>"; };
 		170BCA771EF004000084693D /* XTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTextView.swift; sourceTree = "<group>"; };
+		173631351EF3BCCC0010AFF0 /* OrderListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListVC.swift; sourceTree = "<group>"; };
+		173631371EF3C5490010AFF0 /* CommentListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentListVC.swift; sourceTree = "<group>"; };
+		173631391EF3C94B0010AFF0 /* list_star01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_star01.png; sourceTree = "<group>"; };
+		1736313A1EF3C94B0010AFF0 /* list_star02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_star02.png; sourceTree = "<group>"; };
+		1736313D1EF3CA730010AFF0 /* CommentReplyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentReplyVC.swift; sourceTree = "<group>"; };
+		1736313F1EF3D3D30010AFF0 /* BankInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfoVC.swift; sourceTree = "<group>"; };
+		173631411EF3DD9A0010AFF0 /* TixianVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TixianVC.swift; sourceTree = "<group>"; };
+		173631441EF3E41D0010AFF0 /* TixianCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TixianCell.swift; sourceTree = "<group>"; };
+		173631451EF3E41D0010AFF0 /* TixianCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TixianCell.xib; sourceTree = "<group>"; };
+		173631481EF3E7650010AFF0 /* TixianHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TixianHistoryVC.swift; sourceTree = "<group>"; };
 		174213271EF22CFA002F37F5 /* XRoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XRoundView.swift; sourceTree = "<group>"; };
 		174213291EF23679002F37F5 /* TestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		1742132D1EF26B4E002F37F5 /* StoresListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresListVC.swift; sourceTree = "<group>"; };
@@ -308,6 +329,7 @@
 		178555121EF3775400C6665F /* ShopsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopsModel.swift; sourceTree = "<group>"; };
 		178555141EF377FF00C6665F /* CouponCheckModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponCheckModel.swift; sourceTree = "<group>"; };
 		178555161EF379A300C6665F /* CheckHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckHistoryModel.swift; sourceTree = "<group>"; };
+		178555181EF3875600C6665F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		178C6BD41EEED0B3006E8A56 /* ScannerBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerBackgroundView.swift; sourceTree = "<group>"; };
 		178C6BD51EEED0B3006E8A56 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		178C6BDA1EEEDE9B006E8A56 /* APPSetupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPSetupVC.swift; sourceTree = "<group>"; };
@@ -449,6 +471,15 @@
 			name = comment;
 			sourceTree = "<group>";
 		};
+		173631431EF3E4020010AFF0 /* tixian */ = {
+			isa = PBXGroup;
+			children = (
+				173631441EF3E41D0010AFF0 /* TixianCell.swift */,
+				173631451EF3E41D0010AFF0 /* TixianCell.xib */,
+			);
+			name = tixian;
+			sourceTree = "<group>";
+		};
 		1742132F1EF26C0C002F37F5 /* stores */ = {
 			isa = PBXGroup;
 			children = (
@@ -562,6 +593,7 @@
 			isa = PBXGroup;
 			children = (
 				17FC99D01EEE7D3F00065AA0 /* UserCenterVC.swift */,
+				1736313D1EF3CA730010AFF0 /* CommentReplyVC.swift */,
 				177E44151EEAB6AA00B9537E /* ShopSearchVC.swift */,
 				179F14DE1E9CE5F700FD80A0 /* HtmlVC.swift */,
 				179A154A1E9DCEE300E60EC2 /* MainTabBar.swift */,
@@ -583,6 +615,12 @@
 				174213341EF273EE002F37F5 /* StoresSearchVC.swift */,
 				1742133D1EF27880002F37F5 /* NoticesListVC.swift */,
 				174213411EF29B20002F37F5 /* AboutVC.swift */,
+				178555181EF3875600C6665F /* LoginVC.swift */,
+				173631351EF3BCCC0010AFF0 /* OrderListVC.swift */,
+				173631371EF3C5490010AFF0 /* CommentListVC.swift */,
+				1736313F1EF3D3D30010AFF0 /* BankInfoVC.swift */,
+				173631411EF3DD9A0010AFF0 /* TixianVC.swift */,
+				173631481EF3E7650010AFF0 /* TixianHistoryVC.swift */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -590,6 +628,8 @@
 		179A15591E9E0E6100E60EC2 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				173631391EF3C94B0010AFF0 /* list_star01.png */,
+				1736313A1EF3C94B0010AFF0 /* list_star02.png */,
 				178555061EF36FF700C6665F /* back_arrow.png */,
 				178555001EF36FE400C6665F /* history.png */,
 				178555011EF36FE400C6665F /* scan.png */,
@@ -769,6 +809,7 @@
 		17A742BE1EE9204900C2F405 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				173631431EF3E4020010AFF0 /* tixian */,
 				174213361EF276BE002F37F5 /* notice */,
 				1742132F1EF26C0C002F37F5 /* stores */,
 				17CA15391EF14741003FE068 /* paysuccess */,
@@ -927,6 +968,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				173631471EF3E41D0010AFF0 /* TixianCell.xib in Resources */,
 				170BCA601EEFD1A90084693D /* CommentCell.xib in Resources */,
 				178554FE1EF36FD400C6665F /* money_add.png in Resources */,
 				177E44041EEA6FC100B9537E /* ReactionMenuView.xib in Resources */,
@@ -935,6 +977,7 @@
 				178554E01EF36FB800C6665F /* star_big_normal.png in Resources */,
 				178554E41EF36FB800C6665F /* star_selected.png in Resources */,
 				178554E51EF36FB800C6665F /* star_unselected.png in Resources */,
+				1736313B1EF3C94B0010AFF0 /* list_star01.png in Resources */,
 				177E44131EEAB22E00B9537E /* NearbyCell.xib in Resources */,
 				179F145D1E9CC08700FD80A0 /* LaunchScreen.storyboard in Resources */,
 				17FC99B71EEE448600065AA0 /* OrderCell.xib in Resources */,
@@ -961,6 +1004,7 @@
 				17A742FF1EE958E000C2F405 /* HomeClassCell.xib in Resources */,
 				174213331EF26C2C002F37F5 /* StoresCell.xib in Resources */,
 				17CA14A21EF11711003FE068 /* XBuyNumView.xib in Resources */,
+				1736313C1EF3C94B0010AFF0 /* list_star02.png in Resources */,
 				177B5B8A1EEE39D500DAA9F5 /* NewsCell.xib in Resources */,
 				178555041EF36FE400C6665F /* scan.png in Resources */,
 				17CA14951EF0EB83003FE068 /* CouponCell.xib in Resources */,
@@ -996,6 +1040,7 @@
 				17F1A02E1EF0273D00885C4E /* XCamera.swift in Sources */,
 				177E44081EEA8E1800B9537E /* NearbyVC.swift in Sources */,
 				177E44031EEA6FC100B9537E /* ReactionMenuView.swift in Sources */,
+				173631421EF3DD9A0010AFF0 /* TixianVC.swift in Sources */,
 				179F14DD1E9CE35F00FD80A0 /* Public.swift in Sources */,
 				170BCA581EEFCE830084693D /* CollectCell.swift in Sources */,
 				170BCA5F1EEFD1A90084693D /* CommentCell.swift in Sources */,
@@ -1005,6 +1050,7 @@
 				179A15451E9DBD6A00E60EC2 /* UserModel.swift in Sources */,
 				170BCA6C1EEFD9420084693D /* UCCommentVC.swift in Sources */,
 				179F14B61E9CCD5D00FD80A0 /* Reflect+Class.swift in Sources */,
+				173631361EF3BCCC0010AFF0 /* OrderListVC.swift in Sources */,
 				177E43F11EEA3D6500B9537E /* XHeaderRefreshView.swift in Sources */,
 				170BCA701EEFEBC60084693D /* MRZoomScrollView.swift in Sources */,
 				177E43F01EEA3D6500B9537E /* XFooterRefreshView.swift in Sources */,
@@ -1030,16 +1076,20 @@
 				177E43E41EEA314700B9537E /* HomeCHeader.swift in Sources */,
 				1785550B1EF3739C00C6665F /* AccountsModel.swift in Sources */,
 				178C6BD71EEED0B3006E8A56 /* ScannerViewController.swift in Sources */,
+				173631461EF3E41D0010AFF0 /* TixianCell.swift in Sources */,
 				179F14E11E9CE77F00FD80A0 /* UIViewController.swift in Sources */,
 				178445D91E9F8DFF00723640 /* Dictionary.swift in Sources */,
 				17A742C11EE9208A00C2F405 /* HomeTopBar.swift in Sources */,
 				17A742E31EE93D4E00C2F405 /* OrderModel.swift in Sources */,
+				178555191EF3875600C6665F /* LoginVC.swift in Sources */,
 				178C6BD61EEED0B3006E8A56 /* ScannerBackgroundView.swift in Sources */,
 				179F14531E9CC08700FD80A0 /* AppDelegate.swift in Sources */,
 				179A154B1E9DCEE300E60EC2 /* MainTabBar.swift in Sources */,
 				17F1A0391EF0402B00885C4E /* XPhotoDelChoose.swift in Sources */,
+				1736313E1EF3CA730010AFF0 /* CommentReplyVC.swift in Sources */,
 				17B524CC1EAAF01100EC78C1 /* XBanner.swift in Sources */,
 				177B5B821EEE379700DAA9F5 /* XHorizontalMenuView.swift in Sources */,
+				173631381EF3C5490010AFF0 /* CommentListVC.swift in Sources */,
 				170BCA521EEFC79A0084693D /* UCUnitsVC.swift in Sources */,
 				17CA14A11EF11711003FE068 /* XBuyNumView.swift in Sources */,
 				17F1A0311EF0273D00885C4E /* XPhotoChooseVC.swift in Sources */,
@@ -1059,6 +1109,7 @@
 				17CA14901EF0CFE3003FE068 /* UIImage.swift in Sources */,
 				177E440D1EEA8F9A00B9537E /* XCollectionView.swift in Sources */,
 				1785550F1EF374B900C6665F /* BankModel.swift in Sources */,
+				173631491EF3E7650010AFF0 /* TixianHistoryVC.swift in Sources */,
 				179A15561E9E032300E60EC2 /* XNavigationController.swift in Sources */,
 				170BCA661EEFD2330084693D /* XStarView.swift in Sources */,
 				178555091EF372AB00C6665F /* CommentModel.swift in Sources */,
@@ -1072,6 +1123,7 @@
 				17F1A0361EF0273D00885C4E /* XPhotoUtil.swift in Sources */,
 				179F14D11E9CDD8F00FD80A0 /* XAlertView.swift in Sources */,
 				17F1A0351EF0273D00885C4E /* XPhotoToolbar.swift in Sources */,
+				173631401EF3D3D30010AFF0 /* BankInfoVC.swift in Sources */,
 				17A743021EE964AB00C2F405 /* HomeTopicCell.swift in Sources */,
 				178555131EF3775400C6665F /* ShopsModel.swift in Sources */,
 				1784459E1E9F1FE700723640 /* Api.swift in Sources */,

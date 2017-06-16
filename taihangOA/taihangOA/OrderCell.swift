@@ -20,107 +20,60 @@ class OrderCell: UITableViewCell {
     
     @IBOutlet weak var price: UILabel!
     
-    @IBOutlet weak var btn: UIButton!
     
-    @IBAction func btn_click(_ sender: UIButton) {
-        
-        if sender.titleLabel?.text == "评价"
+    var model:OrderModel = OrderModel()
+    {
+        didSet
         {
-            let vc = "CommentSubmitVC".VC(name: "Main") as! CommentSubmitVC
-//            vc.data_id = model.deal_id
-            self.viewController?.show(vc, sender: nil)
+             let url = URL.init(string: model.icon)
+            img.kf.setImage(with: url)
+            name.text = model.name
+            time.text = "下单时间：\(model.create_time)"
+            price.text = "￥\(model.total_price)"
+            
+            if(model.pay_status != "2")
+            {
+                status.text = "未付款"
+            }
+            else
+            {
+                if(model.order_status == "1")
+                {
+                    
+                    if(model.dp_id > 0)
+                    {
+                        status.text = "已点评"
+                    }
+                    else
+                    {
+                        status.text = "已消费"
+                    }
+                    
+                }
+                else
+                {
+                    status.text = "未使用"
+                }
+                
+            }
+            
+            if(model.refund_status == 1)
+            {
+                status.text = "退款中"
+            }
+            else if(model.refund_status == 2)
+            {
+                status.text = "已退款"
+            }
+            else if(model.refund_status == 3)
+            {
+                status.text = "拒绝退款"
+            }
+            
+            
             
         }
-        else if sender.titleLabel?.text == "查看券码"
-        {
-//            let vc = CouponListVC()
-//            vc.oid = model.id
-//            vc.name = model.sub_name
-//            vc.hidesBottomBarWhenPushed = true
-//            self.viewController?.show(vc, sender: nil)
-        }
-        else if sender.titleLabel?.text == "付款"
-        {
-//            let vc = "UCOrderPayVC".VC(name: "Main") as! UCOrderPayVC
-//            
-//            vc.oid = model.id
-//            vc.name_str = model.sub_name
-//            vc.paytype = model.payment_id
-//            vc.tprice_num = model.total_price
-//            vc.cprice_num = model.account_money
-//            vc.nprice_num = model.need_pay_price
-//            
-//            let nv = XNavigationController.init(rootViewController: vc)
-//            
-//            self.viewController?.show(nv, sender: nil)
-        }
-        
-        
     }
-    
-//    var model:OrderItemModel = OrderItemModel()
-//    {
-//        didSet
-//        {
-//             let url = URL.init(string: model.deal_icon)
-//            img.kf.setImage(with: url)
-//            name.text = model.sub_name
-//            time.text = "下单时间：\(model.create_time)"
-//            price.text = "￥\(model.total_price)"
-//            
-//            if(model.pay_status != "2")
-//            {
-//                status.text = "未付款"
-//                btn.setTitle("付款", for: .normal)
-//                btn.isHidden = false
-//            }
-//            else
-//            {
-//                if(model.order_status == "1")
-//                {
-//                    
-//                    if(model.dp_id > 0)
-//                    {
-//                        status.text = "已点评"
-//                        btn.isHidden = true
-//                    }
-//                    else
-//                    {
-//                        status.text = "已消费"
-//                        btn.setTitle("评价", for: .normal)
-//                        btn.isHidden = false
-//                    }
-//                    
-//                }
-//                else
-//                {
-//                    status.text = "未使用"
-//                    btn.setTitle("查看券码", for: .normal)
-//                    btn.isHidden = false
-//                }
-//                
-//            }
-//            
-//            if(model.refund_status == 1)
-//            {
-//                status.text = "退款中"
-//                btn.isHidden = true
-//            }
-//            else if(model.refund_status == 2)
-//            {
-//                status.text = "已退款"
-//                btn.isHidden = true
-//            }
-//            else if(model.refund_status == 3)
-//            {
-//                status.text = "拒绝退款"
-//                btn.isHidden = true
-//            }
-//            
-//            
-//            
-//        }
-//    }
     
     
     override func awakeFromNib() {
@@ -134,15 +87,6 @@ class OrderCell: UITableViewCell {
         self.setHighlighted(false, animated: false)
     }
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        btn.layer.cornerRadius = 4.0
-        btn.layer.borderWidth = 1.0
-        btn.layer.borderColor = "FFA500".color().cgColor
-        
-    }
-    
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -150,9 +94,11 @@ class OrderCell: UITableViewCell {
         {
             deSelect()
             
-           
+            let vc = HtmlVC()
+            vc.url = "http://tg01.sssvip.net/wap/index.php?ctl=biz_dealo&act=app_info&id=\(model.id)".url()
+            vc.title = "订单详情"
             
-            
+            self.viewController?.show(vc, sender: nil)
             
         }
     }

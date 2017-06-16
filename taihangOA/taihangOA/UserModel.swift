@@ -10,29 +10,27 @@ import UIKit
 
 class UserModel: Reflect {
 
-    var id = ""
-    var user_name = ""
-    var mobile = ""
-    var is_effect = 0
-    var is_tmp = ""
-    var money = ""
-    var avatar = ""
-    var real_name = ""
-    var rezhenging = false
-    var id_number = ""
+    var  id = ""
+    var  account_name = ""
+    var  account_password = ""
+    var  sid = ""
+    var  name = ""
+    var  icon = ""
+    var  status = 0
+    var  mobile = ""
+    var  sess_id = ""
     
     func reset()
     {
         id = ""
-        user_name = ""
+        account_name = ""
+        account_password = ""
+        sid = ""
+        name = ""
+        icon = ""
+        status = 0
         mobile = ""
-        is_effect = 0
-        is_tmp = ""
-        money = ""
-        avatar = ""
-        real_name = ""
-        rezhenging = false
-        id_number = ""
+        sess_id = ""
         save()
     }
     

@@ -53,17 +53,17 @@ class UserInfoVC: UITableViewController,UIActionSheetDelegate,UIImagePickerContr
         tableView.tableFooterView = v
         tableView.tableHeaderView = v
         
-        var icon = DataCache.Share.User.avatar
-        if !icon.has("http://") && !icon.has("https://")
-        {
-            icon = "http://tg01.sssvip.net/" + icon
-        }
-        
-        header.kf.setImage(with: icon.url())
-        
-        mobile.text = DataCache.Share.User.user_name
-        name.text = DataCache.Share.User.real_name
-        idsnum.text = DataCache.Share.User.id_number
+//        var icon = DataCache.Share.User.avatar
+//        if !icon.has("http://") && !icon.has("https://")
+//        {
+//            icon = "http://tg01.sssvip.net/" + icon
+//        }
+//        
+//        header.kf.setImage(with: icon.url())
+//        
+//        mobile.text = DataCache.Share.User.user_name
+//        name.text = DataCache.Share.User.real_name
+//        idsnum.text = DataCache.Share.User.id_number
         
     }
     

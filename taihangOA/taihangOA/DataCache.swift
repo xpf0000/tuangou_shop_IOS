@@ -22,15 +22,22 @@ class DataCache: NSObject {
         if let model = UserModel.read(name: "User")
         {
             User = model as! UserModel
-        }
-        else
-        {
-//            CloudPushSDK.removeAlias(nil) { (res) in
-//            
-//                print(res.debugDescription)
-//                print("清空阿里推送!!!!!!!")
-//                
-//            }
+            
+            Api.user_init(id: User.id, sid: User.sid, a: User.account_name, block: { (session_id) in
+                
+                if session_id != ""
+                {
+                    self.User.sess_id = session_id
+                }
+                else
+                {
+                    "UserTimeOut".postNotice()
+                }
+                
+            })
+            
+            
+            
         }
         
                        

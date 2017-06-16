@@ -13,8 +13,6 @@ class APPSetupVC: UITableViewController,UIAlertViewDelegate {
 
     let logoutAlert = UIAlertView()
     
-    @IBOutlet weak var ustatus: UILabel!
-    
     @IBOutlet weak var caches: UILabel!
     
     @IBOutlet weak var btn: UIButton!
@@ -22,19 +20,12 @@ class APPSetupVC: UITableViewController,UIAlertViewDelegate {
     
     @IBAction func btn_click(_ sender: Any) {
         
-        if DataCache.Share.User.id == ""
-        {
-            
-        }
-        else
-        {
-            logoutAlert.delegate = self
-            logoutAlert.title = "注销登录"
-            logoutAlert.message = "确定要登出账户吗?"
-            logoutAlert.addButton(withTitle: "取消")
-            logoutAlert.addButton(withTitle: "确定")
-            logoutAlert.show()
-        }
+        logoutAlert.delegate = self
+        logoutAlert.title = "注销登录"
+        logoutAlert.message = "确定要登出账户吗?"
+        logoutAlert.addButton(withTitle: "取消")
+        logoutAlert.addButton(withTitle: "确定")
+        logoutAlert.show()
         
     }
     
@@ -47,9 +38,15 @@ class APPSetupVC: UITableViewController,UIAlertViewDelegate {
             DataCache.Share.User = UserModel()
             DataCache.Share.User.save()
             
-            "UserAccountChange".postNotice()
+            Api.user_logout(block: { (str) in
+  
+            })
             
-            initUI()
+            let vc = "LoginVC".VC(name: "Main")
+
+            let app:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            app.window?.rootViewController = vc
+            app.window?.makeKeyAndVisible()
             
         }
         
@@ -92,17 +89,8 @@ class APPSetupVC: UITableViewController,UIAlertViewDelegate {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 1
-        {
-            cell.separatorInset=UIEdgeInsetsMake(0, 0, 0, 0)
-            cell.layoutMargins=UIEdgeInsetsMake(0, 0, 0, 0)
-        }
-        else
-        {
-            cell.separatorInset=UIEdgeInsetsMake(0, SW, 0, 0)
-            cell.layoutMargins=UIEdgeInsetsMake(0, SW, 0, 0)
-        }
-        
+        cell.separatorInset=UIEdgeInsetsMake(0, SW, 0, 0)
+        cell.layoutMargins=UIEdgeInsetsMake(0, SW, 0, 0)
         
         
     }
@@ -118,28 +106,10 @@ class APPSetupVC: UITableViewController,UIAlertViewDelegate {
     
     func initUI()
     {
-        if DataCache.Share.User.id == ""
-        {
-            ustatus.text = "未登录"
-        }
-        else
-        {
-            if(DataCache.Share.User.is_effect == 1)
-            {
-                ustatus.text = "已认证"
-            }
-            else
-            {
-                ustatus.text = "未认证"
-            }
-        }
-        
         let size = KingfisherManager.shared.cache.diskCachePath.CachesSize()
         
         caches.text = String(format: "%.2fM", size/1024.0/1024.0)
-        
-        btn.isSelected = DataCache.Share.User.id != ""
-        
+
     }
     
     

@@ -60,16 +60,7 @@ class UCUnitsVC: UITableViewController,UIWebViewDelegate {
     
     func getData()
     {
-        let uid = DataCache.Share.User.id
-        let uname = DataCache.Share.User.user_name
-        
-//        Api.user_getUnitsInfo(uid: uid, uname: uname) {[weak self] (m) in
-//            
-//            self?.model = m
-//            
-//            
-//        }
-        
+               
     }
     
 

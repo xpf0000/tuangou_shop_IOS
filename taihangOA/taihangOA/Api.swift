@@ -115,8 +115,13 @@ class Api: NSObject {
         url += "&data_id="+data_id
         url += "&reply_content="+reply_content
         
+        url = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        
         print(url)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
+            
+            XWaitingView.hide()
+            
             switch response.result {
             case .success(let value):
                 
@@ -244,6 +249,8 @@ class Api: NSObject {
         url += "&tel="+tel
         url += "&code="+code
         
+        url = url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        
         print(url)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
@@ -286,6 +293,9 @@ class Api: NSObject {
         
         print(url)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
+            
+            XWaitingView.hide()
+            
             switch response.result {
             case .success(let value):
                 
@@ -369,6 +379,7 @@ class Api: NSObject {
                 
             case .failure(let error):
                 print(error)
+                
             }
         }
         

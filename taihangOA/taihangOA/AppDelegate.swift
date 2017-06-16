@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UIAlertViewDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        
         netcheck.whenReachable = { reachability in
             DispatchQueue.main.async {
                 NetConnected = true
@@ -47,6 +46,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UIAlertViewDelegate {
         } catch {
             print("Unable to start notifier")
         }
+        
+        if DataCache.Share.User.id != ""
+        {
+            let home = "HomeVC".VC(name: "Main")
+            let nv = XNavigationController.init(rootViewController: home)
+            window?.rootViewController = nv
+            window?.makeKeyAndVisible()
+        }
+        else
+        {
+            let vc = "LoginVC".VC(name: "Main")
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+        }
+        
         
         return true
     }
