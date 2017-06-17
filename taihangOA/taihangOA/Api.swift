@@ -441,12 +441,18 @@ class Api: NSObject {
     
     class func check_coupon(location_id:String,coupon_pwd:String,block:@escaping ApiBlock<CouponCheckModel>)
     {
+        
+        XWaitingView.show()
+        
         var url = BaseUrl+"?ctl=biz_dealv&act=app_check_coupon&r_type=1&isapp=true"
         url += "&location_id="+location_id
         url += "&coupon_pwd="+coupon_pwd
         
         print(url)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
+            
+            XWaitingView.hide()
+            
             switch response.result {
             case .success(let value):
                 
@@ -467,8 +473,11 @@ class Api: NSObject {
         location_id:String,
         coupon_pwd:String,
         coupon_use_count:String,
-        block:@escaping ApiBlock<CouponCheckModel>)
+        block:@escaping ApiBlock<Bool>)
     {
+        
+        XWaitingView.show()
+        
         var url = BaseUrl+"?ctl=biz_dealv&act=use_coupon&r_type=1&isapp=true"
         url += "&location_id="+location_id
         url += "&coupon_pwd="+coupon_pwd
@@ -476,6 +485,9 @@ class Api: NSObject {
         
         print(url)
         Alamofire.request(url, method: .get).validate().responseJSON { response in
+            
+            XWaitingView.hide()
+            
             switch response.result {
             case .success(let value):
                 
@@ -486,16 +498,18 @@ class Api: NSObject {
                 if status != 1
                 {
                     let msg = json["info"].string ?? "验证失败"
+                    block(false)
                     XMessage.show(msg)
                 }
                 else
                 {
-                    let model = CouponCheckModel.parse(json: json["data"], replace: nil)
-                    block(model)
+                    block(true)
                 }
   
             case .failure(let error):
                 print(error)
+                block(false)
+                XMessage.show(error.localizedDescription)
             }
         }
         

@@ -16,14 +16,25 @@ class HomeVC: UIViewController {
     
     @IBAction func to_scan(_ sender: Any) {
         
+        let vc = ScannerViewController()
+        
+        self.show(vc, sender: nil)
         
     }
     
     
     @IBAction func to_input(_ sender: Any) {
+        
+        let vc = "CheckCouponVC".VC(name: "Main")
+        self.show(vc, sender: nil)
+        
     }
     
     @IBAction func to_history(_ sender: Any) {
+        
+        let vc = CheckHistoryVC()
+        self.show(vc, sender: nil)
+        
     }
     
     
@@ -43,6 +54,10 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func to_caiwu(_ sender: Any) {
+        
+        let vc = MoneyVC()
+        self.show(vc, sender: nil)
+        
     }
     
     @IBAction func to_account(_ sender: Any) {

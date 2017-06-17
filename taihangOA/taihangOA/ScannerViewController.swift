@@ -111,16 +111,25 @@ class ScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsDele
             
             DispatchQueue.main.async(execute: {
                 
+                if !metaData.stringValue.hasBegin("tuan")
+                {
+                    XAlertView.show("此二维码不是团购券二维码，无法验证", block: { [weak self] in
+                        self?.pop()
+                    })
+                    
+                    return
+                }
+                
                 if self.block != nil
                 {
-                    self.block!(metaData.stringValue)
+                    self.block!(metaData.stringValue.replace("tuan", with: ""))
                     self.pop()
                 }
                 else
                 {
                     
-                    let vc = "RegistVC".VC(name: "Main") as!  RegistVC
-                    vc.codestr = metaData.stringValue
+                    let vc = "CheckCouponVC".VC(name: "Main") as!  CheckCouponVC
+                    vc.code = metaData.stringValue.replace("tuan", with: "")
                     self.show(vc, sender: nil)
                     
                 }

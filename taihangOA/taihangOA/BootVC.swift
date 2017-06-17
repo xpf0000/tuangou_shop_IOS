@@ -29,22 +29,7 @@ class BootVC: UIViewController {
     
     func tonext()
     {
-        if(DataCache.Share.User.id == "")
-        {
-            let vc  = "LoginVC".VC(name: "Main")
-            self.hero_replaceViewController(with: vc)
-            UIApplication.shared.keyWindow?.rootViewController = vc
-            UIApplication.shared.keyWindow?.makeKeyAndVisible()
         
-        }
-        else
-        {
-            let vc  = "MainTabBar".VC(name: "Main") as! MainTabBar
-            vc.selectedIndex = 0
-            self.hero_replaceViewController(with: vc)
-            UIApplication.shared.keyWindow?.rootViewController = vc
-            UIApplication.shared.keyWindow?.makeKeyAndVisible()
-        }
     }
     
     func showAD()

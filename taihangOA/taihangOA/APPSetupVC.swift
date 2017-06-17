@@ -69,14 +69,14 @@ class APPSetupVC: UITableViewController,UIAlertViewDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-       if indexPath.row == 2
+       if indexPath.row == 1
        {
         
             KingfisherManager.shared.cache.clearDiskCache()
             caches.text = "0.0MB"
         
         }
-        else if indexPath.row == 4
+        else if indexPath.row == 3
        {
             let vc = "AboutVC".VC(name: "Main")
             self.show(vc, sender: nil)
